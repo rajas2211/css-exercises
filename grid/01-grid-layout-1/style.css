@@ -9,9 +9,16 @@ body, html {
   padding: 16px;
   box-sizing: border-box;
   display: grid;
-  grid: 1fr 1fr 5fr 1fr / 1fr 3fr;
   gap: 15px;
+  grid-template-areas: 
+  "hd"
+  "nv"
+  "ar"
+  "sb"
+  "ft";
 }
+
+
 
 .container div {
   padding: 15px;
@@ -24,20 +31,22 @@ body, html {
 
 .header {
   background-color: #FFDE22;
-  grid-column: span 2;
+  grid-area: hd;
 }
 
 .sidebar {
   background-color: #FF7755;
-  grid-row: span 2;
+  grid-area: sb;
 }
 
 .nav {
   background-color: #00DDFF;
+  grid-area: nv;
 }
 
 .article {
   background-color: #bccbde;
+  grid-area: ar
 }
 
 .article p {
@@ -49,5 +58,19 @@ body, html {
 
 .footer {
   background-color: #393f4d;
-  grid-column: span 2;
+  grid-area: ft;
+}
+
+@media (min-width: 600px){
+  .container {
+    grid-template-areas: 
+    "hd hd hd hd"
+    "sb nv nv nv"
+    "sb ar ar ar"
+    "sb ar ar ar"
+    "sb ar ar ar"
+    "sb ar ar ar"
+    "sb ar ar ar"
+    "ft ft ft ft";
+  }
 }
